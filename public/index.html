@@ -5,8 +5,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://kit.fontawesome.com/78a289b7c0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./media.css">
   </head>
   <body>
-    <h1>Hi students!</h1>
-  </body>
+    
+    <header data-cy="welcome-segment">
+
+      <h1>Calendar</h1>
+
+      <div class="monthDisplay">
+        <div class="leftArrow">
+          <i class="fa-solid fa-angle-left"></i>
+        </div>
+
+        <div class="whichMonth"><h2>December</h2></div>
+
+        <div class="rightArrow">
+          <i class="fa-solid fa-angle-right"></i>
+        </div>
+      </div>
+    </header>
+    
+    <div>
+      <aside data-cy="todo-list">
+
+          <div class="TimeAndDateDisplay">
+            <p class="day">Tuesday</p>
+            <p class="date">24/12/2022</p>
+            <p class="time">10:00:00</p>
+          </div>
+
+          <div class="toDoDisplay">
+
+            <div class="toDoDropdown">
+              <p>To do:s</p>
+              <div class="dropArrow"></div>
+            </div>
+
+            <div class="currentToDoItem">
+              <p class="description">asd</p>
+              <button class="removeToDo"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+            <button class="addDayEvent">
+              <p>Add an event</p>
+            </button>
+            <button class="addOccasion">
+              <p>Add a occasion</p>
+            </button>
+          </div>
+      </aside>
+      
+      <main data-cy="calendar-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+              <th>Sun</th>
+            </tr>
+          </thead>
+
+        <tbody>
+          <tr>
+            <td class="box"></td>
+            <td class="box"></td>
+            <td class="box"></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+          </tr>
+
+          <tr>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+          </tr>
+
+          <tr>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+          </tr>
+          
+          <tr>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+            <td class="box"></td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
 </html>
