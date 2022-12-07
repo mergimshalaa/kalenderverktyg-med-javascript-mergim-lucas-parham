@@ -6,14 +6,13 @@
 
 /* Reuseables*/
 .displayBlock {
-    display: block;
+    display: block !important;
 }
 
 .displayFlex {
     display: Flex;
 }
 /* =============== */
-
 
 body div {
     display: flex;
@@ -85,6 +84,10 @@ aside {
     transition: 0.2s;
 }
 
+.toDoItemList {
+    display: none;
+}
+
 .currentToDoItem {
     padding: 1rem;
     font-size: 17px;
@@ -102,10 +105,19 @@ aside {
     background-color: rgb(241, 101, 101);
 }
 
-.addDayEvent {
-    
+.addDayEvent, .addOccasion {
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
 }
 
+/* --------------------------CALENDER--------------------*/
+.calendar{
+    display: flex;
+    justify-content: center;
+}
 table {
     border-collapse: collapse;
     background: white;
@@ -127,7 +139,7 @@ td {
 }
 
 tr, th, td {
-    padding: 6vh;
+    padding: 4vw;
 }
 
 td {
