@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
+    <script src="./JavaScript/main.js"></script>
     <script src="https://kit.fontawesome.com/78a289b7c0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./media.css">
   </head>
@@ -44,21 +45,26 @@
               <div class="dropArrow"></div>
             </div>
 
-            <div class="currentToDoItem">
-              <p class="description">asd</p>
-              <button class="removeToDo"><i class="fa-solid fa-trash"></i></button>
+            <div class="toDoItemList">
+              
+              <div class="currentToDoItem">
+                <p class="description">asd</p>
+                <button class="removeToDo"><i class="fa-solid fa-trash"></i></button>
+              </div>
             </div>
 
             <button class="addDayEvent">
               <p>Add an event</p>
+              <i class="fa-solid fa-plus"></i>
             </button>
             <button class="addOccasion">
               <p>Add a occasion</p>
+              <i class="fa-solid fa-plus"></i>
             </button>
           </div>
       </aside>
       
-      <main data-cy="calendar-body">
+      <main class="calendar" data-cy="calendar-body">
         <table>
           <thead>
             <tr>
