@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
-    <script src="./JavaScript/main.js"></script>
+    <script type="module" src="./JavaScript/main.js"></script>
     <script src="https://kit.fontawesome.com/78a289b7c0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./media.css">
   </head>
@@ -29,12 +29,12 @@
       </div>
     </header>
     
-    <aside data-cy="todo-list">
+    <aside>
 
-          <div class="TimeAndDateDisplay">
-            <p class="day">Tuesday</p>
-            <p class="date">24/12/2022</p>
-            <p class="time">10:00:00</p>
+          <div class="TimeAndDateDisplay" data-cy="welcome-segment">
+            <p class="day"></p>
+            <p class="date"></p>
+            <p class="time"></p>
           </div>
 
           <div class="toDoDisplay">
@@ -44,7 +44,7 @@
               <div class="dropArrow"></div>
             </div>
 
-            <div class="toDoItemList">
+            <div class="toDoItemList" data-cy="todo-list">
               
               <div class="currentToDoItem">
                 <p class="description">asd</p>
