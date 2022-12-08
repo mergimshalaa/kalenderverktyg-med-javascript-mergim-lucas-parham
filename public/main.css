@@ -127,7 +127,10 @@ table {
     background: white;
     color: black;
     border: solid rgba(0, 0, 0, .2);
-  
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+    
    
 }
 
@@ -135,6 +138,7 @@ th {
     font-weight: bold;
     background: rgb(110, 110, 167);
     border: solid rgba(0, 0, 0, .2);
+    height: 12vh;
 }
 
 td {
@@ -143,7 +147,7 @@ td {
 }
 
 tr, th, td {
-    padding: 3vw;
+    
 }
 
 td {
@@ -152,11 +156,4 @@ td {
 
 .box {
     background-color: lightgray;
-}
-
-#tjabbla{
-    height: 80vh;
-    width: 100vw;
-    display: flex;
-    
 }
