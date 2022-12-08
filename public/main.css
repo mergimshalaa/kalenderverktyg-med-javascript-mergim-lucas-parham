@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    height: 100vh;
+}
 /* Reuseables*/
 .displayBlock {
     display: block !important;
@@ -13,10 +15,6 @@
     display: Flex;
 }
 /* =============== */
-
-body div {
-    display: flex;
-}
 
 header {
     display: flex;
@@ -44,7 +42,8 @@ header {
 }
 
 aside {
-    width: 30%;
+    display: inline-flex;
+    flex-direction: column
 }
 
 .TimeAndDateDisplay {
@@ -114,7 +113,10 @@ aside {
 }
 
 /* --------------------------CALENDER--------------------*/
-.calendar{
+main {
+    display: inline;
+}
+.calendar {
     display: flex;
     justify-content: center;
 }
@@ -123,7 +125,6 @@ table {
     background: white;
     color: black;
     border: solid rgba(0, 0, 0, .2);
-    border-spacing: 10px;
     text-align: center;
 }
 
@@ -148,4 +149,10 @@ td {
 
 .box {
     background-color: lightgray;
+}
+
+#main-yta{
+    display:flex;
+    width: 100%;
+   
 }
