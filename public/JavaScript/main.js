@@ -22,5 +22,7 @@ function addEventListeners() {
 
     const addEvent = document.querySelector(".addDayEvent");
     addEvent.addEventListener("click", openAddEventWindow);
+    const closeAddEventWindow = document.querySelector(".fa-xmark");
+    closeAddEventWindow.addEventListener("click", openAddEventWindow)
 }
 
