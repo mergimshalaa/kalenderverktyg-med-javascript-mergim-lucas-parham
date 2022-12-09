@@ -10,7 +10,7 @@
 }
 
 .displayFlex {
-    display: Flex !important;
+    display: flex !important;
 }
 /* =============== */
 
@@ -188,9 +188,6 @@ td {
    border: solid rgba(0, 0, 0, .2);
 }
 
-tr, th, td {
-    
-}
 
 td {
     font-size: 20px;
