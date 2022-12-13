@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #D2DAFF;
+    opacity: .9;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.currentMonth {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+}
+
+.monthDisplay {
+    text-align: center;
+    width: 13rem;
+    font-size: 20px;
+}
+
+.Container {
+    display: flex;
+    flex-grow: 1;
+    
+}
+
+.timeAndDateDisplay {
+    padding: 3rem 0;
+    gap: .5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 25rem;
+    border: 2px solid black;
+}
+
+.filler{ 
+    padding: .7rem 0;
+    width: 25rem;
+    background-color: #5F6F94;
+}
+.week{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    color: white;
+    padding: .7rem 3.5rem;
+    align-items: center;
+}
+
+.weekdiv{
+    background-color: #5F6F94;   
+    display: flex;
+}
+
