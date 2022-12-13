@@ -5,8 +5,66 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendar</title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="https://kit.fontawesome.com/78a289b7c0.js" crossorigin="anonymous"></script>
+  <script src="./JavaScript/main.js"></script>
+  
 </head>
 <body>
+  <header>
+
+      <h1>Calender</h1>
+      <div class="currentMonth">
+        <i class="fa-solid fa-angle-left"></i>
+        <p class="monthDisplay">December 2022</p>
+        <i class="fa-solid fa-angle-right"></i>
+
+    </div>
+
+  </header>
   
+  <div class="weekdiv">
+    <div class="filler"></div>
+    <div class="week">
+      <div class="weekDays">Söndag</div>
+      <div class="weekDays">Måndag</div>
+      <div class="weekDays">Tisdag</div>
+      <div class="weekDays">Onsdag</div>
+      <div class="weekDays">Torsdag</div>
+      <div class="weekDays">Fredag</div>
+      <div class="weekDays">Lördag</div>
+    </div>
+  </div>
+  
+  <div class="Container">
+
+    <aside>
+      <div class="timeAndDateDisplay" data-cy="welcome-segment">
+
+        <div class="date"></div>
+        <div class="time"></div>
+        <div class="day"></div>
+      </div>
+      
+        <div class="eventContainer">
+        <div class="eventDropdown">
+        <div class="eventList"></div>
+      </div>
+
+      <div class="buttons">
+        <button class="addEvent"></button>
+        <button class="addOccasion"></button>
+      </div>
+
+    </aside>
+  
+  
+  <main>
+
+    <div class="calendarBody"></div>
+  </main> 
+  
+</div>
+
 </body>
 </html>
