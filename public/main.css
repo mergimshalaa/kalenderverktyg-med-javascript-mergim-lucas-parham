@@ -41,13 +41,13 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 25rem;
+    width: 25vw;
     border: 2px solid black;
 }
 
 .filler{ 
     padding: .7rem 0;
-    width: 25rem;
+    width: 25vw;
     background-color: #5F6F94;
 }
 .week{
