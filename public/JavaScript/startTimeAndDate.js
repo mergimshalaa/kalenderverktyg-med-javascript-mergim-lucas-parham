@@ -1,5 +1,5 @@
 
-export function startTimeAndDate() {
+function startTimeAndDate() {
     setInterval(startClock, 1000);
 }
 
