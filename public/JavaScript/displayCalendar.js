@@ -1,6 +1,6 @@
 let currentMonth = 0;
 
-export function displayCalendar() {
+function displayCalendar() {
     const calendarDisplay = document.querySelector(".calendarDisplay");
     const monthDisplay = document.querySelector(".monthDisplay");
     const weekArray = ["söndag", "måndag", "tisdag", "Onsdag", "torsdag", "fredag", "lördag"];
@@ -49,7 +49,7 @@ export function displayCalendar() {
     }
 }
 
-export function changeMonthView() {
+function changeMonthView() {
     
     document.querySelector(".fa-angle-left").addEventListener("click", () => {
         currentMonth--;
