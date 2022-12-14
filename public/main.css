@@ -8,6 +8,8 @@ body {
     height: 100vh;
     background-color: #D2DAFF;
     opacity: .9;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -32,7 +34,6 @@ header {
 .Container {
     display: flex;
     flex-grow: 1;
-    
 }
 
 .timeAndDateDisplay {
@@ -42,7 +43,7 @@ header {
     align-items: center;
     flex-direction: column;
     width: 25vw;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .filler{ 
@@ -64,3 +65,19 @@ header {
     display: flex;
 }
 
+.calendarDisplay{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.calendarDay {
+    width: calc(100% / 7 - 2px);
+    padding: 1rem;
+    margin: 1px;
+    border: 1px solid black;
+}
+
+.emptyCalendarSpace {
+    border: none;
+}
