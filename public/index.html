@@ -7,6 +7,8 @@
   <title>Calendar</title>
   <link rel="stylesheet" href="./main.css">
   <script type="module" src="./JavaScript/main.js"></script>
+  <script src="./JavaScript/startTimeAndDate.js"></script>
+  <script src="./JavaScript/displayCalendar.js"></script>
   <script src="https://kit.fontawesome.com/78a289b7c0.js" crossorigin="anonymous"></script>
   <script src="./JavaScript/main.js"></script>
   
@@ -16,9 +18,9 @@
 
       <h1>Calender</h1>
       <div class="currentMonth">
-        <i class="fa-solid fa-angle-left"></i>
+        <i class="fa-solid fa-angle-left" data-cy="prev-month"></i>
         <p class="monthDisplay"></p>
-        <i class="fa-solid fa-angle-right"></i>
+        <i class="fa-solid fa-angle-right" data-cy="next-month"></i>
 
     </div>
 
@@ -62,7 +64,7 @@
   
   <main>
 
-    <div class="calendarDisplay"></div>
+    <div class="calendarDisplay" data-cy="calendar-body"></div>
   </main> 
   
 </div>
