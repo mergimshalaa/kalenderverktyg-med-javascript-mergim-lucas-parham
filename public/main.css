@@ -56,8 +56,12 @@ header {
     flex-grow: 1;
     justify-content: space-between;
     color: white;
-    padding: .7rem 3.5rem;
     align-items: center;
+}
+
+.weekDays {
+    width: calc(100% / 7);
+    text-align: center;
 }
 
 .weekdiv{
