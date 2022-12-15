@@ -3,7 +3,7 @@ let currentMonth = 0;
 function displayCalendar() {
     const calendarDisplay = document.querySelector(".calendarDisplay");
     const monthDisplay = document.querySelector(".monthDisplay");
-    const weekArray = ["söndag", "måndag", "tisdag", "Onsdag", "torsdag", "fredag", "lördag"];
+    const weekArray = ["måndag", "tisdag", "Onsdag", "torsdag", "fredag", "lördag", "söndag"];
 
     const date = new Date();
 
