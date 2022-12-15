@@ -3,10 +3,11 @@ let currentMonth = 0;
 function displayCalendar() {
   const calendarDisplay = document.querySelector(".calendarDisplay");
   const monthDisplay = document.querySelector(".monthDisplay");
+  console.log(monthDisplay)
   const weekArray = [
     "måndag",
     "tisdag",
-    "Onsdag",
+    "onsdag",
     "torsdag",
     "fredag",
     "lördag",
@@ -25,7 +26,7 @@ function displayCalendar() {
 
   const firstDayOfMonth = new Date(year, month, 1);
   const daysInMonth = new Date(year, month + 1, 0).getDate();
-
+  
   monthDisplay.textContent = `${date.toLocaleString("sv-SE", {
     month: "long",
     year: "numeric",
