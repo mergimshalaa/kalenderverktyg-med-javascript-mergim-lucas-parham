@@ -85,3 +85,12 @@ header {
 .emptyCalendarSpace {
     border: none;
 }
+
+
+.task-container {
+    width: 25vw;
+    min-height: 100px;
+    background-image: url(./img/unfocussed-winter-background-with-snowflakes_1393-271.webp);
+    object-fit: cover;
+    border-radius: 10px;
+}
