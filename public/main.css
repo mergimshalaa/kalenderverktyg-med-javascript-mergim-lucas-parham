@@ -92,5 +92,46 @@ header {
     min-height: 100px;
     background-image: url(./img/unfocussed-winter-background-with-snowflakes_1393-271.webp);
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
 }
+
+.newTask {
+    position: relative;
+    padding: 2rem 1rem;
+}
+
+.newTask input {
+    height: 2rem;
+    width: 18vw;
+    border: 1px solid black;
+    position: relative;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.newTask button {
+    width: 3rem;
+    height: 1.9rem;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #82C3EC;
+    color: white;
+    font-weight: 700;
+    float: right;
+}
+
+#tasksAdded {
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    width: 100%;
+    margin-top: 10px;
+    
+
+}
+
+
+
