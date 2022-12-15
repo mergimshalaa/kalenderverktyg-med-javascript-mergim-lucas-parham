@@ -89,10 +89,9 @@ header {
 
 .task-container {
     width: 25vw;
-    min-height: 100px;
+    min-height: 20vh;
     background-image: url(./img/unfocussed-winter-background-with-snowflakes_1393-271.webp);
     object-fit: cover;
-    border-radius: 20px;
 }
 
 .newTask {
@@ -123,15 +122,21 @@ header {
     float: right;
 }
 
-#tasksAdded {
-    position: relative;
-    background-color: #ffffff;
-    padding: 30px 20px;
-    width: 100%;
-    margin-top: 10px;
-    
-
+.taskList {
+    padding: 1rem;
 }
 
+#tasks {
+    margin-top: 1rem;
+    
+}
+
+li {
+    list-style-type: none;
+    margin-top: 1rem;
+    background-color: gray;
+    padding: .5rem;
+    border-radius: 10px;
+}
 
 
