@@ -1,9 +1,7 @@
-
-
-window.addEventListener('DOMContentLoaded', main);
+window.addEventListener("DOMContentLoaded", main);
 
 function main() {
-    startTimeAndDate();
-    displayCalendar();
-    changeMonthView();
+  startTimeAndDate();
+  displayCalendar();
+  changeMonthView();
 }
