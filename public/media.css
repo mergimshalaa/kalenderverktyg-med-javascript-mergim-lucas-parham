@@ -1,3 +1,5 @@
-@media screen and (min-width: 360px) {
-    body{}
+@media (max-width: 700px) {
+    .calendarDisplay{
+        display: none;
+    }
 }

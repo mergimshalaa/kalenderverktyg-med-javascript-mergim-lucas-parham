@@ -1,6 +1,6 @@
 let currentMonth = 0;
 
-function displayCalendar() {
+async function displayCalendar() {
     const calendarDisplay = document.querySelector(".calendarDisplay");
     const monthDisplay = document.querySelector(".monthDisplay");
     const weekArray = ["måndag", "tisdag", "Onsdag", "torsdag", "fredag", "lördag", "söndag"];
@@ -10,7 +10,7 @@ function displayCalendar() {
     if ( currentMonth !== 0 ) {
         date.setMonth( new Date().getMonth() + currentMonth );
     }
-
+    const holidays = await fetchholidays(date)
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();

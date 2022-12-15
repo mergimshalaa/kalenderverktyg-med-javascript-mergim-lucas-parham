@@ -1,31 +1,39 @@
-var JAN = 1,
-    FEB = 2,
-    MAR = 3,
-    APR = 4,
-    MAJ = 5,
-    JUN = 6,
-    JUL = 7,
-    AUG = 8,
-    SEP = 9,
-    OCT = 10,
-    NOV = 11,
-    DEC = 12;
+window.addEventListener('DOMContentLoaded', main);
 
-    var Days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
-       
+async function main() {
+  const dates = await fetchLastFiveMidsummerDays();
+  renderMidsummerDates(dates);
+}
 
-const holidays = {
-    Nyårsdagen:[Days, JAN],
-    Trettondedag:[Days, JAN],
-    Långfredagen: [Days, JAN],
-    Påskdagen: [Days, JAN],
-    AnnandagPåsk: [Days, JAN],
-    FörstaMaj: [Days, JAN],
-    KristiHimmelfärdsdag: [Days, JAN],
-    Pingstdagen: [Days, JAN],
-    Sverigesnationaldag: [Days, JAN],
-    Midsommardagen: [Days, JAN],
-    AllaHelgonsDag: [Days, JAN],
-    Juldagen: [Days, JAN],
-    Annandagjul: [Days, JAN],
+function renderMidsummerDates(dates) {
+  const listElements = dates.map(date => {
+    const li = document.createElement('li');
+    li.textContent = date;
+    return li;
+  })
+  const ul = document.querySelector('ul');
+  ul.append(...listElements);
+ }
+
+async function fetchLastFiveMidsummerDays() {
+  const currentYear = new Date().getFullYear();
+
+  const midsummerDates = [];
+  for (let year = currentYear; year > currentYear - 5; year--) {
+    const midsummerDate = await fetchMidsummerDay(year);
+    midsummerDates.push(midsummerDate);
+  }
+  return midsummerDates;
+}
+
+async function fetchMidsummerDay(year) {
+  const url = `https://sholiday.faboul.se/dagar/v2.1/${year}/06`;
+  const response = await fetch(url);
+  const result = await response.json();
+
+  for (const day of result.dagar) {
+    if (day.helgdag === "Midsommarafton") {
+      return day.datum
+    }
+  }
 }
