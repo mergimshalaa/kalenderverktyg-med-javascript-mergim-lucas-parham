@@ -1,6 +1,8 @@
 function addItemToDo() {
   document.querySelector("#addToDo").addEventListener("click", () => {
     const task = document.getElementById("taskInput").value;
+    const dateTodo = document.getElementById("dateTodo").value;
+    
     const li = document.createElement("li");
 
     const deleteIcon = document.createElement("i");
@@ -9,6 +11,7 @@ function addItemToDo() {
     const div = document.createElement("div");
     div.classList.add("container-icon");
 
+
     document.getElementById("tasks").append(li);
 
     deleteIcon.addEventListener("click", () => {
@@ -16,7 +19,7 @@ function addItemToDo() {
     });
 
     li.innerText = task;
-    li.append(deleteIcon);
+    li.append(dateTodo, deleteIcon);
   });
 }
 
