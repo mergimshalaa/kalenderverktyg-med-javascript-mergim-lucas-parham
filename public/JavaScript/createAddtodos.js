@@ -5,6 +5,8 @@ function addItemToDo() {
     
     const li = document.createElement("li");
 
+    const editIcon = document.createElement("i");
+    editIcon.classList.add("fa-solid", "fa-pencil", "editPen");
     const deleteIcon = document.createElement("i");
     deleteIcon.classList.add("fa-solid", "fa-trash-can", "trash");
 
@@ -19,7 +21,7 @@ function addItemToDo() {
     });
 
     li.innerText = task;
-    li.append(dateTodo, deleteIcon);
+    li.append(dateTodo, editIcon, deleteIcon);
   });
 }
 
