@@ -57,8 +57,9 @@
       <div class="task-container">
         <div class="newTask">
           <input id="taskInput" type="text" placeholder="Tasks...">
-          <button onclick="addItemToDo()" id="addToDo">Add</button>
-          <div id="tasks"></div>
+          <input id="dateTodo" type="date">
+          <button id="addToDo" data-cy="save-todo">Add</button>
+          <div id="tasks" data-cy="delete-todo-button"></div>
         </div>
       </div>
     </aside>

@@ -96,6 +96,7 @@ header {
 .newTask {
     position: relative;
     padding: 2rem 1rem;
+    
 }
 
 .newTask input {
@@ -118,23 +119,23 @@ header {
     background-color: #82C3EC;
     color: white;
     font-weight: 700;
-    float: right;
 }
 
 .taskList {
     padding: 1rem;
 }
 
-#tasks {
-    margin-top: 1rem;
-    
-}
 
 li {
-    list-style-type: none;
-    margin-top: 1rem;
-    background-color: gray;
-    padding: .5rem;
-    border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-top: 1rem;
+  background-color: #5f6f94;
+  padding: .5rem;
+  border-radius: 10px;
 }
 
+#dateTodo {
+  margin-top: 1rem;
+}
