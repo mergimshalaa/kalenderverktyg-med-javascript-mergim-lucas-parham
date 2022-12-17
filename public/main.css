@@ -140,6 +140,6 @@ li {
 }
 
 #tasks {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 300px;
 }
