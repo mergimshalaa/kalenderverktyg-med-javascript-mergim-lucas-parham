@@ -1,19 +1,15 @@
 let currentMonth = 0;
 
+async function fetchholidays(date) {
 
-  const date = new Date();
-
-  if (currentMonth !== 0) {
-    date.setMonth(new Date().getMonth() + currentMonth);
-  }
-
-  const day = date.getDate();
-  const month = date.getMonth();
     const year = date.getFullYear();
+    const month = date.getMonth() +1;
+    const url = `https://sholiday.faboul.se/dagar/v2.1/${year}/${month}`;
+    const response = await fetch(url);
+    const result = await response.json();
 
-  const firstDayOfMonth = new Date(year, month, 1);
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-
+    return result;
+  }
 
 async function displayCalendar() {
     const calendarDisplay = document.querySelector(".calendarDisplay");
@@ -45,7 +41,6 @@ async function displayCalendar() {
     const emptyCalendarSpace = weekArray.indexOf(dateString.split(", ")[0]);
 
     calendarDisplay.innerHTML = "";
-    console.log(holidays["dagar"]);
 
     for ( let i = 1; i <= emptyCalendarSpace + daysInMonth; i++) {
         const calendarDay = document.createElement("div");
@@ -55,14 +50,22 @@ async function displayCalendar() {
 
             if(holidays["dagar"][i-1-emptyCalendarSpace]["röd dag"] == "Ja"){
                 calendarDay.style.color = "red";
-                console.log(holidays["dagar"][i-1]["datum"] + "INDEX:" +i)
             }
 
             calendarDay.innerText = i - emptyCalendarSpace;
 
             calendarDay.addEventListener("click", () => {
-
+                    
             })
+
+            if(holidays["dagar"][i-1-emptyCalendarSpace]["helgdag"] != null){
+                t = document.createElement("p")
+                calendarDay.appendChild(t)
+                t.innerHTML = holidays["dagar"][i-1-emptyCalendarSpace]["helgdag"];
+                console.log(calendarDay)
+                calendarDay.style.color = "red";
+            }
+            
         } else {
             calendarDay.classList.add("emptyCalendarSpace");
         }
@@ -72,7 +75,6 @@ async function displayCalendar() {
 }
 
 function changeMonthView() {
-    
     document.querySelector(".fa-angle-left").addEventListener("click", () => {
         currentMonth--;
         displayCalendar();
