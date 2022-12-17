@@ -96,7 +96,6 @@ header {
 .newTask {
     position: relative;
     padding: 2rem 1rem;
-    
 }
 
 .newTask input {
@@ -138,4 +137,9 @@ li {
 
 #dateTodo {
   margin-top: 1rem;
+}
+
+#tasks {
+  overflow-y: scroll;
+  height: 300px;
 }
