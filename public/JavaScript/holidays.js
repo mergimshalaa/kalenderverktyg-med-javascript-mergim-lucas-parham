@@ -27,7 +27,7 @@ async function fetchLastFiveMidsummerDays() {
 }
 
 async function fetchMidsummerDay(year) {
-  const url = `https://sholiday.faboul.se/dagar/v2.1/${year}/06`;
+  const url = `https://sholiday.faboul.se/dagar/v2.1/${year}/`;
   const response = await fetch(url);
   const result = await response.json();
 
