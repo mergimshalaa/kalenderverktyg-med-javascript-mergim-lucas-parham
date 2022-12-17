@@ -1,87 +1,141 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    background-color: #D2DAFF;
-    opacity: .9;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  background-color: #d2daff;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
 .currentMonth {
-    display: flex;
-    justify-content: space-between;
-    margin-top: .5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }
 
 .monthDisplay {
-    text-align: center;
-    width: 13rem;
-    font-size: 20px;
+  text-align: center;
+  width: 13rem;
+  font-size: 20px;
 }
 
 .Container {
-    display: flex;
-    flex-grow: 1;
+  display: flex;
+  flex-grow: 1;
 }
 
 .timeAndDateDisplay {
-    padding: 3rem 0;
-    gap: .5rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 25vw;
-    border: 1px solid black;
+  padding: 3rem 0;
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 25vw;
+  border: 1px solid black;
 }
 
-.filler{ 
-    padding: .7rem 0;
-    width: 25vw;
-    background-color: #5F6F94;
+.filler {
+  padding: 0.7rem 0;
+  width: 25vw;
+  background-color: #5f6f94;
 }
-.week{
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
-    color: white;
-    align-items: center;
+.week {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
 }
 
 .weekDays {
-    width: calc(100% / 7);
-    text-align: center;
+  width: calc(100% / 7);
+  text-align: center;
 }
 
-.weekdiv{
-    background-color: #5F6F94;   
-    display: flex;
+.weekdiv {
+  background-color: #5f6f94;
+  display: flex;
 }
 
-.calendarDisplay{
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
+.calendarDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
 }
 
 .calendarDay {
-    width: calc(100% / 7 - 2px);
-    padding: 1rem;
-    margin: 1px;
-    border: 1px solid black;
+  width: calc(100% / 7 - 2px);
+  padding: 1rem;
+  margin: 1px;
+  border: 1px solid black;
 }
 
 .emptyCalendarSpace {
     border: none;
+}
+
+.task-container {
+    width: 25vw;
+    min-height: 20vh;
+    background-image: url(./img/unfocussed-winter-background-with-snowflakes_1393-271.webp);
+    object-fit: cover;
+}
+
+.newTask {
+    position: relative;
+    padding: 2rem 1rem;
+    
+}
+
+.newTask input {
+    height: 2rem;
+    width: 18vw;
+    border: 1px solid black;
+    position: relative;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.newTask button {
+    width: 3rem;
+    height: 1.9rem;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #82C3EC;
+    color: white;
+    font-weight: 700;
+}
+
+.taskList {
+    padding: 1rem;
+}
+
+
+li {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-top: 1rem;
+  background-color: #5f6f94;
+  padding: .5rem;
+  border-radius: 10px;
+}
+
+#dateTodo {
+  margin-top: 1rem;
 }

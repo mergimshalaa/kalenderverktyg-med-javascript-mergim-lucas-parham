@@ -1,5 +1,20 @@
 let currentMonth = 0;
 
+
+  const date = new Date();
+
+  if (currentMonth !== 0) {
+    date.setMonth(new Date().getMonth() + currentMonth);
+  }
+
+  const day = date.getDate();
+  const month = date.getMonth();
+    const year = date.getFullYear();
+
+  const firstDayOfMonth = new Date(year, month, 1);
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+
 async function displayCalendar() {
     const calendarDisplay = document.querySelector(".calendarDisplay");
     const monthDisplay = document.querySelector(".monthDisplay");
@@ -30,12 +45,19 @@ async function displayCalendar() {
     const emptyCalendarSpace = weekArray.indexOf(dateString.split(", ")[0]);
 
     calendarDisplay.innerHTML = "";
+    console.log(holidays["dagar"]);
 
     for ( let i = 1; i <= emptyCalendarSpace + daysInMonth; i++) {
         const calendarDay = document.createElement("div");
         calendarDay.classList.add("calendarDay");
-
+       
         if ( i > emptyCalendarSpace ) {
+
+            if(holidays["dagar"][i-1-emptyCalendarSpace]["röd dag"] == "Ja"){
+                calendarDay.style.color = "red";
+                console.log(holidays["dagar"][i-1]["datum"] + "INDEX:" +i)
+            }
+
             calendarDay.innerText = i - emptyCalendarSpace;
 
             calendarDay.addEventListener("click", () => {
