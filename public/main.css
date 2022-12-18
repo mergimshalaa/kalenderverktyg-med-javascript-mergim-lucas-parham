@@ -146,5 +146,6 @@ li {
 
 .container-icon i {
   padding: 0 4px;
+  cursor: pointer;
 }
 
