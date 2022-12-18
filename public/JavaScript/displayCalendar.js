@@ -14,7 +14,7 @@ async function fetchholidays(date) {
 async function displayCalendar() {
     const calendarDisplay = document.querySelector(".calendarDisplay");
     const monthDisplay = document.querySelector(".monthDisplay");
-    const weekArray = ["måndag", "tisdag", "Onsdag", "torsdag", "fredag", "lördag", "söndag"];
+    const weekArray = ["måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag", "söndag"];
 
     const date = new Date();
 
