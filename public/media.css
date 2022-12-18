@@ -1,5 +1,9 @@
 @media (max-width: 360px) {
-    .calendarDisplay{
+    .calendarDisplay, .weekdiv, main{
         display: none;
     }
+    aside{
+        width: 100%;
+    }
 }
+
