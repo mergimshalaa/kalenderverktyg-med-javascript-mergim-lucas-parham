@@ -13,6 +13,7 @@ function addItemToDo() {
     const div = document.createElement("div");
     div.classList.add("container-icon");
 
+    div.append(editIcon, deleteIcon);
 
     document.getElementById("tasks").append(li);
 
@@ -21,7 +22,7 @@ function addItemToDo() {
     });
 
     li.innerText = task;
-    li.append(dateTodo, editIcon, deleteIcon);
+    li.append(dateTodo, div);
   });
 }
 
