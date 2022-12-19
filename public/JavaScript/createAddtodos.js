@@ -1,10 +1,9 @@
 function addItemToDo() {
   document.querySelector("#addToDo").addEventListener("click", () => {
-    const task = document.getElementById("taskInput").value;
+  const task = document.getElementById("taskInput").value;
 
-    //Display date for todos in a div under todos
-    const dateTodo = document.getElementById("dateTodo").value;
-    
+  const dateTodo = document.getElementById("dateTodo").value;
+
    const taskList = document.createElement('div');
    taskList.classList.add('task');
 
@@ -30,7 +29,7 @@ function addItemToDo() {
 
     taskActions.append(taskEdit);
     taskActions.append(deleteTask);
-    taskContent.append(taskInput);
+    taskContent.append(taskInput, dateTodo);
     taskList.append(taskActions);
 
     document.getElementById('tasks').append(taskList);
