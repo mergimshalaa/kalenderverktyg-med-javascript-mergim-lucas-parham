@@ -88,7 +88,7 @@ header {
 
 .task-container {
     width: 25vw;
-    min-height: 20vh;
+    min-height: 15vh;
     background-image: url(./img/unfocussed-winter-background-with-snowflakes_1393-271.webp);
     object-fit: cover;
 }
@@ -104,7 +104,6 @@ header {
     position: relative;
     border: 1px solid #5f6f94;
     border-radius: 5px;
-    padding: 5px;
 }
 
 .newTask button {
@@ -127,7 +126,6 @@ header {
 
 .task {
   display: flex;
-  justify-content: space-between;
   margin-top: 1rem;
   background-color: #5f6f94;
   padding: .5rem;
@@ -140,7 +138,7 @@ header {
 
 #tasks {
   overflow-y: auto;
-  height: 310px;
+  height: 300px;
 }
 
 .trash {
@@ -153,9 +151,22 @@ header {
 
 button.edit {
   background-color: #5f6f94;
-  width: 2rem;
 }
 
 input.textInput {
-  width: 17vw;
+  width: 16vw;
+}
+
+#todoCount {
+  margin-top: 1.9rem;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+div.content {
+  padding: 5px;
+}
+
+.taskActions {
+  text-align: center;
 }
