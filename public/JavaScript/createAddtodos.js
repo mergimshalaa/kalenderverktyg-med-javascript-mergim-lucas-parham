@@ -1,31 +1,53 @@
 function addItemToDo() {
   document.querySelector("#addToDo").addEventListener("click", () => {
     const task = document.getElementById("taskInput").value;
+    
+    //Display date for todos in a div under todos
     const dateTodo = document.getElementById("dateTodo").value;
     
-    const li = document.createElement("li");
+   const taskList = document.createElement('div');
+   taskList.classList.add('task');
 
-    const editIcon = document.createElement("i");
-    editIcon.classList.add("fa-solid", "fa-pencil", "editPen");
-    const deleteIcon = document.createElement("i");
-    deleteIcon.classList.add("fa-solid", "fa-trash-can", "trash");
+   const taskContent = document.createElement('div')
+   taskContent.classList.add('content');
+   taskList.appendChild(taskContent);
 
-    const div = document.createElement("div");
-    div.classList.add("container-icon");
+   const taskInput = document.createElement('input');
+   taskInput.classList.add('textInput');
+   taskInput.type = 'text';
+   taskInput.value = task;
+   taskInput.setAttribute('readonly', 'readonly');
 
-    div.append(editIcon, deleteIcon);
+   const taskActions = document.createElement('div');
+   taskActions.classList.add('taskActions');
+   
+   const taskEdit = document.createElement('button');
+   taskEdit.classList.add('edit')
+   taskEdit.innerText = 'Edit';
 
-    document.getElementById("tasks").append(li);
+    const deleteTask = document.createElement("i");
+    deleteTask.classList.add("fa-solid", "fa-trash-can", "trash");
 
-    deleteIcon.addEventListener("click", () => {
-      removeItemToDo(li);
-    });
+    taskActions.appendChild(taskEdit);
+    taskActions.appendChild(deleteTask);
+    taskContent.appendChild(taskInput);
+    taskList.appendChild(taskActions);
 
-    li.innerText = task;
-    li.append(dateTodo, div);
-  });
-}
+    document.getElementById('tasks').appendChild(taskList);
 
-function removeItemToDo(item) {
-  item.remove();
+    taskEdit.addEventListener('click', () => {
+      if (taskEdit.innerText.toLowerCase() == "edit") {
+        taskEdit.innerText = "Save";
+        taskInput.removeAttribute("readonly");
+        taskInput.focus()
+      } else {
+        taskEdit.innerText = "Edit";
+        taskInput.setAttribute('readonly', 'readonly');
+      }
+    })
+
+    deleteTask.addEventListener('click', () => {
+      document.getElementById("tasks").removeChild(taskList);
+    })
+  })
 }
