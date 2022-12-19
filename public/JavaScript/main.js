@@ -9,7 +9,7 @@ function main() {
 
 function addEventListeners() {
   document.querySelector("#addToDo").addEventListener("click", () => {
-    addItemToDo();
     addToDoToLS();
+    addItemToDo();
   })
 }
