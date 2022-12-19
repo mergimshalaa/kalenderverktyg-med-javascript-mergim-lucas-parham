@@ -126,17 +126,24 @@ header {
 
 .task {
   display: flex;
+  justify-content: space-between;
   margin-top: 1rem;
   background-color: #5f6f94;
   padding: .5rem;
   border-radius: 10px;
 }
 
+.taskText {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
 #dateTodo {
   margin-top: 1rem;
 }
 
-#tasks {
+#taskList {
   overflow-y: auto;
   height: 300px;
 }
@@ -168,5 +175,7 @@ div.content {
 }
 
 .taskActions {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
