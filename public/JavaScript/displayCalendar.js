@@ -62,7 +62,6 @@ async function displayCalendar() {
                 t = document.createElement("p")
                 calendarDay.appendChild(t)
                 t.innerHTML = holidays["dagar"][i-1-emptyCalendarSpace]["helgdag"];
-                console.log(calendarDay)
                 calendarDay.style.color = "red";
             }
             
