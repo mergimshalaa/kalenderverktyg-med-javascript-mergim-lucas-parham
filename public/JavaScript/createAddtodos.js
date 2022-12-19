@@ -1,6 +1,20 @@
 function addItemToDo() {
-  document.querySelector("#addToDo").addEventListener("click", () => {
-  const task = document.getElementById("taskInput").value;
+
+  const tasksInStorage = JSON.parse(localStorage.getItem("tasks"));
+
+  if ( !tasksInStorage ) {
+    return
+  }
+  
+  const taskList = document.querySelector("#tasks");
+  taskList.textContent = "";
+
+  for ( const item of tasksInStorage ) {
+    const task = document.getElementById("taskInput").value;
+    const dateTodo = document.getElementById("dateTodo").value;
+    
+    const li = document.createElement("li");
+
 
   const dateTodo = document.getElementById("dateTodo").value;
 
@@ -16,6 +30,18 @@ function addItemToDo() {
    taskInput.type = 'text';
    taskInput.value = task;
    taskInput.setAttribute('readonly', 'readonly');
+    
+    deleteIcon.addEventListener("click", () => {
+      const storedArray = JSON.parse(localStorage.getItem("tasks"));
+      const taskItem = storedArray.find(task => task.id === item.id)
+
+      storedArray.splice(taskItem, 1);
+      localStorage.setItem("tasks", JSON.stringify(storedArray));
+      removeItemToDo(li);
+    });
+      
+  }
+}
 
    const taskActions = document.createElement('div');
    taskActions.classList.add('taskActions');
@@ -33,6 +59,7 @@ function addItemToDo() {
     taskList.append(taskActions);
 
     document.getElementById('tasks').append(taskList);
+
 
     taskEdit.addEventListener('click', () => {
       if (taskEdit.innerText.toLowerCase() == "edit") {
