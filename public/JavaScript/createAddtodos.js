@@ -1,7 +1,7 @@
 function addItemToDo() {
   document.querySelector("#addToDo").addEventListener("click", () => {
     const task = document.getElementById("taskInput").value;
-    
+
     //Display date for todos in a div under todos
     const dateTodo = document.getElementById("dateTodo").value;
     
@@ -10,7 +10,7 @@ function addItemToDo() {
 
    const taskContent = document.createElement('div')
    taskContent.classList.add('content');
-   taskList.appendChild(taskContent);
+   taskList.append(taskContent);
 
    const taskInput = document.createElement('input');
    taskInput.classList.add('textInput');
@@ -28,12 +28,12 @@ function addItemToDo() {
     const deleteTask = document.createElement("i");
     deleteTask.classList.add("fa-solid", "fa-trash-can", "trash");
 
-    taskActions.appendChild(taskEdit);
-    taskActions.appendChild(deleteTask);
-    taskContent.appendChild(taskInput);
-    taskList.appendChild(taskActions);
+    taskActions.append(taskEdit);
+    taskActions.append(deleteTask);
+    taskContent.append(taskInput);
+    taskList.append(taskActions);
 
-    document.getElementById('tasks').appendChild(taskList);
+    document.getElementById('tasks').append(taskList);
 
     taskEdit.addEventListener('click', () => {
       if (taskEdit.innerText.toLowerCase() == "edit") {
@@ -48,6 +48,13 @@ function addItemToDo() {
 
     deleteTask.addEventListener('click', () => {
       document.getElementById("tasks").removeChild(taskList);
+      updateTodoCount();
     })
+    updateTodoCount();
   })
+}
+
+function updateTodoCount() {
+  const todoCount = document.querySelectorAll('.task').length;
+  document.querySelector('#todoCount').textContent = `${todoCount}`;
 }
