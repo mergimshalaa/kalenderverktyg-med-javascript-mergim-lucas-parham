@@ -11,6 +11,7 @@
   <script src="./JavaScript/startTimeAndDate.js"></script>
   <script src="./JavaScript/displayCalendar.js"></script>
   <script src="./JavaScript/createAddtodos.js"></script>
+  <script src="./JavaScript/addToDoToLS.js"></script>
   <script src="https://kit.fontawesome.com/78a289b7c0.js" crossorigin="anonymous"></script>
   <script src="./JavaScript/main.js"></script>
   <script src="holidays.js"></script>
@@ -57,10 +58,10 @@
 
       <div class="task-container">
         <div class="newTask">
-          <input id="taskInput" type="text" placeholder="Tasks..." data-cy="todo-task-input">
-          <input id="dateTodo" type="date" data-cy="todo-date-input">
+          <input id="taskInput" required type="text" placeholder="Tasks..." data-cy="todo-task-input">
+          <input id="dateTodo" required type="date" data-cy="todo-date-input">
           <button id="addToDo" data-cy="save-todo">Add</button>
-          <div id="tasks" data-cy="delete-todo-button"></div>
+          <div id="taskList"></div>
           <p id="todoCount"></p>
         </div>
       </div>

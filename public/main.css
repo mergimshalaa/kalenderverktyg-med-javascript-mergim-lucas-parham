@@ -6,7 +6,6 @@
 
 body {
   height: 100vh;
-  background-color: #d2daff;
   opacity: 0.9;
   display: flex;
   flex-direction: column;
@@ -17,6 +16,8 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+  background-color: #181D31;
+  color: #FFFBEB;
 }
 
 .currentMonth {
@@ -44,12 +45,14 @@ header {
   flex-direction: column;
   width: 25vw;
   border: 1px solid black;
+  background-color: #FFFBEB;
+  border-radius: 7px;
 }
 
 .filler {
   padding: 0.7rem 0;
   width: 25vw;
-  background-color: #5f6f94;
+  background-color: #263159;
 }
 .week {
   display: flex;
@@ -57,6 +60,7 @@ header {
   justify-content: space-between;
   color: white;
   align-items: center;
+  padding: .5rem 0;
 }
 
 .weekDays {
@@ -65,7 +69,7 @@ header {
 }
 
 .weekdiv {
-  background-color: #5f6f94;
+  background-color: #263159;
   display: flex;
 }
 
@@ -73,6 +77,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+  background-color: #FFF5EA;
 }
 
 .calendarDay {
@@ -80,6 +85,7 @@ header {
   padding: 1rem;
   margin: 1px;
   border: 1px solid black;
+  border-radius: 7px;
 }
 
 .emptyCalendarSpace {
@@ -89,24 +95,26 @@ header {
 .task-container {
     width: 25vw;
     min-height: 15vh;
-    background-image: url(./img/unfocussed-winter-background-with-snowflakes_1393-271.webp);
-    object-fit: cover;
+    background-color: #D6D2C4;
 }
 
 .newTask {
     position: relative;
     padding: 2rem 1rem;
+    background-color: #495579;
+    border-radius: 7px;
 }
 
-.newTask input {
+#taskInput, #dateTodo {
     height: 2rem;
     width: 18vw;
     position: relative;
     border: 1px solid #5f6f94;
     border-radius: 5px;
-}
-
-.newTask button {
+    padding: 0 .5rem;
+  }
+  
+  .newTask button {
     width: 3rem;
     height: 1.9rem;
     border-radius: 4px;
@@ -117,26 +125,43 @@ header {
     background-color: #82C3EC;
     color: white;
     font-weight: 700;
-}
-
-.taskList {
+  }
+  
+  .taskList {
     padding: 1rem;
-}
+  }
+  
+  
+  .task {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background-color: #5f6f94;
+    padding: .5rem;
+    border-radius: 10px;
+  }
+  
+  .taskText {
+    background-color: transparent;
+    color: black;
+    border: none;
+  }
+  
+  .editTextInput, .editDateInput {
+    display: none;
+    background-color: transparent;
+    width: 15vw;
+    height: 1.5rem;
+    padding: 0 .5rem;
+    border-radius: 5px;
+    border: 1px solid #313f5e;
+  }
+  
+  #dateTodo {
+    margin-top: 1rem;
+  }
 
-
-.task {
-  display: flex;
-  margin-top: 1rem;
-  background-color: #5f6f94;
-  padding: .5rem;
-  border-radius: 10px;
-}
-
-#dateTodo {
-  margin-top: 1rem;
-}
-
-#tasks {
+#taskList {
   overflow-y: auto;
   height: 300px;
 }
@@ -168,5 +193,7 @@ div.content {
 }
 
 .taskActions {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
