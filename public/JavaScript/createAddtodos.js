@@ -9,9 +9,6 @@ function addItemToDo() {
   
   for ( const task of storedTasks ) {
 
-    const taskInput = document.getElementById("taskInput");
-    const dateInput = document.getElementById("dateTodo");
-
     const taskItem = document.createElement("div");
     taskItem.classList.add("task");
     
@@ -73,52 +70,6 @@ function addItemToDo() {
         addItemToDo();
       })
     });
-
-
-    // const task = document.getElementById("taskInput").value;
-
-    // const dateTodo = document.getElementById("dateTodo").value;
-
-    // const taskList = document.createElement("div");
-    // taskList.classList.add("task");
-
-    // const taskContent = document.createElement("div");
-    // taskContent.classList.add("content");
-    // taskList.append(taskContent);
-
-    // const taskInput = document.createElement("input");
-    // taskInput.classList.add("textInput");
-    // taskInput.type = "text";
-    // taskInput.value = task;
-    // taskInput.setAttribute("readonly", "readonly");
-
-    // const taskActions = document.createElement("div");
-    // taskActions.classList.add("taskActions");
-
-    // const taskEdit = document.createElement("button");
-    // taskEdit.classList.add("edit");
-    // taskEdit.innerText = "Edit";
-
-    // const deleteTask = document.createElement("i");
-    // deleteTask.classList.add("fa-solid", "fa-trash-can", "trash");
-
-    // taskActions.append(taskEdit);
-    // taskActions.append(deleteTask);
-    // taskContent.append(taskInput, dateTodo);
-    // taskList.append(taskActions);
-
-    // document.getElementById("taskList").append(taskList);
-
-    // taskEdit.addEventListener("click", () => {
-    //   if (taskEdit.innerText.toLowerCase() == "edit") {
-    //     taskEdit.innerText = "Save";
-    //     taskInput.removeAttribute("readonly");
-    //     taskInput.focus();
-    //   } else {
-    //     taskEdit.innerText = "Edit";
-    //     taskInput.setAttribute("readonly", "readonly");
-    //   }
-    // });
 
     deleteTask.addEventListener("click", () => {
       const storedTasks = JSON.parse(localStorage.getItem("tasks"));
