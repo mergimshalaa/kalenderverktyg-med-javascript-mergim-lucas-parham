@@ -2,6 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: monospace;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayNone {
+  display: none;
 }
 
 body {
@@ -13,22 +22,34 @@ body {
 
 header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
   background-color: #181d31;
   color: #fffbeb;
 }
 
+.burgerContainer {
+  display: none;
+}
+
+.calendarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .currentMonth {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5rem;
+  align-items: center;
 }
 
 .monthDisplay {
   text-align: center;
-  width: 13rem;
+  width: 18rem;
   font-size: 20px;
 }
 
@@ -86,6 +107,19 @@ header {
   margin: 1px;
   border: 1px solid black;
   border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eventsInDay {
+  background-color: #313f5e;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  width: 2rem;
+  padding: 0.2rem;
+  
 }
 
 .emptyCalendarSpace {
@@ -151,7 +185,7 @@ header {
 .editDateInput {
   display: none;
   background-color: transparent;
-  width: 15vw;
+  width: 12vw;
   height: 1.5rem;
   padding: 0 0.5rem;
   border-radius: 5px;
@@ -166,6 +200,16 @@ header {
 #taskList {
   overflow-y: auto;
   height: 300px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #8196c6;
+  border-radius: 5px;
 }
 
 .trash {
@@ -187,7 +231,6 @@ input.textInput {
 #todoCount {
   margin-top: 1.9rem;
   font-weight: bold;
-  font-family: "Courier New", Courier, monospace;
 }
 
 div.content {
