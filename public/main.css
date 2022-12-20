@@ -105,12 +105,19 @@ header {
   margin: 1px;
   border: 1px solid black;
   border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.taskInDay {
+.eventsInDay {
   background-color: #313f5e;
   border-radius: 5px;
-  padding: 0 .2rem;
+  color: white;
+  text-align: center;
+  width: 2rem;
+  padding: 0.2rem;
+  
 }
 
 .emptyCalendarSpace {

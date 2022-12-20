@@ -51,7 +51,7 @@ function addItemToDo() {
     taskText.textContent = task.taskTitle;
     dateContainer.textContent = task.date;
     taskEdit.textContent = "Edit";
-
+    displayCalendar()
     taskEdit.addEventListener("click", () => {
       const storedTasks = JSON.parse(localStorage.getItem("tasks"));
       taskEdit.textContent = "Save";
