@@ -24,6 +24,10 @@
   .filler {
     display: none;
   }
+
+  .editTextInput, .editDateInput {
+    width: 28vw;
+  }
 }
 
 
@@ -47,5 +51,9 @@
 
   #taskInput, #dateTodo {
     width: 40%;
+  }
+
+  .editTextInput, .editDateInput {
+    width: 70vw;
   }
 }
