@@ -8,7 +8,7 @@ function addItemToDo() {
   taskList.textContent = "";
 
   for (const task of storedTasks) {
-    const taskItem = document.createElement("div");
+    const taskItem = document.createElement("li");
     taskItem.classList.add("task");
 
     const taskTextAndDateContainer = document.createElement("div");
@@ -32,9 +32,11 @@ function addItemToDo() {
 
     const taskEdit = document.createElement("button");
     taskEdit.classList.add("edit");
+    taskEdit.setAttribute("data-cy", "edit-todo-button")
 
     const deleteTask = document.createElement("i");
     deleteTask.classList.add("fa-solid", "fa-trash-can", "trash");
+    deleteTask.setAttribute("data-cy", "delete-todo-button")
 
     taskActions.append(taskEdit, deleteTask);
     taskTextAndDateContainer.append(
@@ -49,6 +51,7 @@ function addItemToDo() {
     taskText.textContent = task.taskTitle;
     dateContainer.textContent = task.date;
     taskEdit.textContent = "Edit";
+    displayCalendar();
 
     taskEdit.addEventListener("click", () => {
       const storedTasks = JSON.parse(localStorage.getItem("tasks"));
@@ -71,6 +74,7 @@ function addItemToDo() {
         dateContainer.style.display = "flex";
         editDateInput.style.display = "none";
         addItemToDo();
+        displayCalendar();
       });
     });
 
@@ -81,6 +85,7 @@ function addItemToDo() {
       localStorage.setItem("tasks", JSON.stringify(storedTasks));
       taskItem.remove();
       updateTodoCount();
+      displayCalendar();
     });
     updateTodoCount();
   }
