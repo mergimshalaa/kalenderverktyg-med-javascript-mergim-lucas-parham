@@ -1,10 +1,51 @@
-@media (max-width: 360px) {
-  .calendarDisplay,
-  .weekdiv,
-  main {
+/* ======= TABLET ======= */
+@media (min-width: 481px) and (max-width: 768px) {
+  aside {
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
     display: none;
   }
+
+  .timeAndDateDisplay {
+    width: 20rem;
+  }
+
+  .task-container {
+    width: 20rem;
+  }
+
+  .burgerContainer {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 40px;
+  }
+
+  .filler {
+    display: none;
+  }
+}
+
+
+/* ======= MOBILE ======= */
+@media (min-width: 360px) and (max-width: 480px) {
+  .weekdiv, main {
+    display: none;
+  }
+
   aside {
     width: 100%;
+  }
+  
+  .timeAndDateDisplay {
+    width: 100%;
+  }
+
+  .task-container {
+    width: 100%;
+  }
+
+  #taskInput, #dateTodo {
+    width: 40%;
   }
 }
