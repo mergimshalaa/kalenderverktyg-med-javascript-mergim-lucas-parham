@@ -11,4 +11,5 @@ function addEventListeners() {
     addToDoToLS();
     addItemToDo();
   });
+  document.querySelector(".burgerMenu").addEventListener("click", toggleAside);
 }
