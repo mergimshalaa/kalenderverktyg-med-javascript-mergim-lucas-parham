@@ -50,11 +50,13 @@ async function displayCalendar() {
 
   const emptyCalendarSpace = weekArray.indexOf(dateString.split(", ")[0]);
 
-  calendarDisplay.innerHTML = "";
+  calendarDisplay.textContent = "";
 
   for (let i = 1; i <= emptyCalendarSpace + daysInMonth; i++) {
     const calendarDay = document.createElement("div");
     calendarDay.classList.add("calendarDay");
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    const sameDay = `${year}-${month + 1}-${i - emptyCalendarSpace}`;
 
     if (i > emptyCalendarSpace) {
       if (holidays["dagar"][i - 1 - emptyCalendarSpace]["röd dag"] == "Ja") {
@@ -62,6 +64,25 @@ async function displayCalendar() {
       }
 
       calendarDay.innerText = i - emptyCalendarSpace;
+      let eventCounter = 0;
+
+      const eventDayDiv = document.createElement("div");
+
+      eventDayDiv.classList.add("eventsInDay");
+
+      storedTasks.forEach(task => {
+        if (task.date === sameDay) {
+          eventCounter++;
+        }
+      });
+
+      if (eventCounter <= 0) {
+        eventDayDiv.style.display = "none";
+      }
+
+      eventDayDiv.textContent = eventCounter;
+
+      calendarDay.append(eventDayDiv);
 
       calendarDay.addEventListener("click", () => {});
 

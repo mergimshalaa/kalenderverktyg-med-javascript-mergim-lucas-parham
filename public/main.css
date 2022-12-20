@@ -106,7 +106,19 @@ header {
   margin: 1px;
   border: 1px solid black;
   border-radius: 7px;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eventsInDay {
+  background-color: #313f5e;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  width: 2rem;
+  padding: 0.2rem;
+  
 }
 
 .emptyCalendarSpace {
@@ -186,6 +198,16 @@ header {
 #taskList {
   overflow-y: auto;
   height: 300px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #8196c6;
+  border-radius: 5px;
 }
 
 .trash {
