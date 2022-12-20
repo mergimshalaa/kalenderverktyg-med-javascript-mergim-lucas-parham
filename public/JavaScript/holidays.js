@@ -1,22 +1,17 @@
-
 async function main() {
   const dates = await fetchLastFiveMidsummerDays();
   renderMidsummerDates(dates);
 }
 
-
-
-
-
 function renderMidsummerDates(dates) {
-  const listElements = dates.map(date => {
-    const li = document.createElement('li');
+  const listElements = dates.map((date) => {
+    const li = document.createElement("li");
     li.textContent = date;
     return li;
-  })
-  const ul = document.querySelector('ul');
+  });
+  const ul = document.querySelector("ul");
   ul.append(...listElements);
- }
+}
 
 async function fetchLastFiveMidsummerDays() {
   const currentYear = new Date().getFullYear();
@@ -36,7 +31,7 @@ async function fetchMidsummerDay(year) {
 
   for (const day of result.dagar) {
     if (day.helgdag === "Midsommarafton") {
-      return day.datum
+      return day.datum;
     }
   }
 }

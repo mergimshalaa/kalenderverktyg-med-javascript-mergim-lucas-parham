@@ -1,4 +1,3 @@
-
 function main() {
   startTimeAndDate();
   displayCalendar();
@@ -11,5 +10,5 @@ function addEventListeners() {
   document.querySelector("#addToDo").addEventListener("click", () => {
     addToDoToLS();
     addItemToDo();
-  })
+  });
 }

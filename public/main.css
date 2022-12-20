@@ -16,8 +16,8 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background-color: #181D31;
-  color: #FFFBEB;
+  background-color: #181d31;
+  color: #fffbeb;
 }
 
 .currentMonth {
@@ -45,7 +45,7 @@ header {
   flex-direction: column;
   width: 25vw;
   border: 1px solid black;
-  background-color: #FFFBEB;
+  background-color: #fffbeb;
   border-radius: 7px;
 }
 
@@ -60,7 +60,7 @@ header {
   justify-content: space-between;
   color: white;
   align-items: center;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 .weekDays {
@@ -77,7 +77,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  background-color: #FFF5EA;
+  background-color: #fff5ea;
 }
 
 .calendarDay {
@@ -89,77 +89,78 @@ header {
 }
 
 .emptyCalendarSpace {
-    border: none;
+  border: none;
 }
 
 .task-container {
-    width: 25vw;
-    min-height: 15vh;
-    background-color: #D6D2C4;
+  width: 25vw;
+  min-height: 15vh;
+  background-color: #d6d2c4;
 }
 
 .newTask {
-    position: relative;
-    padding: 2rem 1rem;
-    background-color: #495579;
-    border-radius: 7px;
+  position: relative;
+  padding: 2rem 1rem;
+  background-color: #495579;
+  border-radius: 7px;
 }
 
-#taskInput, #dateTodo {
-    height: 2rem;
-    width: 18vw;
-    position: relative;
-    border: 1px solid #5f6f94;
-    border-radius: 5px;
-    padding: 0 .5rem;
-  }
-  
-  .newTask button {
-    width: 3rem;
-    height: 1.9rem;
-    border-radius: 4px;
-    outline: none;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    background-color: #82C3EC;
-    color: white;
-    font-weight: 700;
-  }
-  
-  .taskList {
-    padding: 1rem;
-  }
-  
-  
-  .task {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-    background-color: #5f6f94;
-    padding: .5rem;
-    border-radius: 10px;
-  }
-  
-  .taskText {
-    background-color: transparent;
-    color: black;
-    border: none;
-  }
-  
-  .editTextInput, .editDateInput {
-    display: none;
-    background-color: transparent;
-    width: 15vw;
-    height: 1.5rem;
-    padding: 0 .5rem;
-    border-radius: 5px;
-    border: 1px solid #313f5e;
-  }
-  
-  #dateTodo {
-    margin-top: 1rem;
-  }
+#taskInput,
+#dateTodo {
+  height: 2rem;
+  width: 18vw;
+  position: relative;
+  border: 1px solid #5f6f94;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+}
+
+.newTask button {
+  width: 3rem;
+  height: 1.9rem;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: #82c3ec;
+  color: white;
+  font-weight: 700;
+}
+
+.taskList {
+  padding: 1rem;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  background-color: #5f6f94;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.taskText {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+.editTextInput,
+.editDateInput {
+  display: none;
+  background-color: transparent;
+  width: 15vw;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #313f5e;
+}
+
+#dateTodo {
+  margin-top: 1rem;
+}
 
 #taskList {
   overflow-y: auto;
@@ -185,7 +186,7 @@ input.textInput {
 #todoCount {
   margin-top: 1.9rem;
   font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 div.content {
