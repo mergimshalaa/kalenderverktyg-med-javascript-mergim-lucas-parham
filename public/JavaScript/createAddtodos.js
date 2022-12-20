@@ -1,3 +1,9 @@
+/**
+ * A function that retrieves the saved tasks from LS and
+ * displays them in the task list in the DOM.
+ * Eventlisteners for editing and deleting tasks
+ * and updates the todo count.
+ */
 function addItemToDo() {
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
 
@@ -91,6 +97,10 @@ function addItemToDo() {
   }
 }
 
+/**
+ * Updates the todo count of task list items
+ * and displays this count in a element in the DOM.
+ */
 function updateTodoCount() {
   const todoCount = document.querySelectorAll(".task").length;
   document.querySelector("#todoCount").textContent = `${todoCount}`;
