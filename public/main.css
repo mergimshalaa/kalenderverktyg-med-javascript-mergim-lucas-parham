@@ -44,6 +44,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5rem;
+  align-items: center;
 }
 
 .monthDisplay {
@@ -104,11 +105,12 @@ header {
   width: calc(100% / 7 - 2px);
   padding: 1rem;
   margin: 1px;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .eventsInDay {
@@ -189,6 +191,7 @@ header {
   padding: 0 0.5rem;
   border-radius: 5px;
   border: 1px solid #313f5e;
+  margin: 4px 0px;
 }
 
 #dateTodo {

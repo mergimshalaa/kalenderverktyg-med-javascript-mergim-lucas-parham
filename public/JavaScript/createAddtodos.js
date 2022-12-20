@@ -1,3 +1,9 @@
+/**
+ * A function that retrieves the saved tasks from LS and
+ * displays them in the task list in the DOM.
+ * Eventlisteners for editing and deleting tasks
+ * and updates the todo count.
+ */
 function addItemToDo() {
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
 
@@ -51,7 +57,8 @@ function addItemToDo() {
     taskText.textContent = task.taskTitle;
     dateContainer.textContent = task.date;
     taskEdit.textContent = "Edit";
-    displayCalendar()
+    displayCalendar();
+
     taskEdit.addEventListener("click", () => {
       const storedTasks = JSON.parse(localStorage.getItem("tasks"));
       taskEdit.textContent = "Save";
@@ -73,6 +80,7 @@ function addItemToDo() {
         dateContainer.style.display = "flex";
         editDateInput.style.display = "none";
         addItemToDo();
+        displayCalendar();
       });
     });
 
@@ -83,11 +91,16 @@ function addItemToDo() {
       localStorage.setItem("tasks", JSON.stringify(storedTasks));
       taskItem.remove();
       updateTodoCount();
+      displayCalendar();
     });
     updateTodoCount();
   }
 }
 
+/**
+ * Updates the todo count of task list items
+ * and displays this count in a element in the DOM.
+ */
 function updateTodoCount() {
   const todoCount = document.querySelectorAll(".task").length;
   document.querySelector("#todoCount").textContent = `${todoCount}`;

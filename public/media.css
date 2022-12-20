@@ -56,4 +56,13 @@
   .editTextInput, .editDateInput {
     width: 70vw;
   }
+  .prevMonth, .nextMonth {
+    display: none;
+  }
 }
+
+@media (max-width: 359px) {
+  body {
+    display: none;
+  }
+} 
