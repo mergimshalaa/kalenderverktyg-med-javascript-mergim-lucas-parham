@@ -60,9 +60,3 @@
     display: none;
   }
 }
-
-@media (max-width: 359px) {
-  body {
-    display: none;
-  }
-} 
