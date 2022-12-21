@@ -55,19 +55,31 @@ async function displayCalendar() {
   for (let i = 1; i <= emptyCalendarSpace + daysInMonth; i++) {
     const calendarDay = document.createElement("div");
     calendarDay.classList.add("calendarDay");
-    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-    const sameDay = `${year}-${month + 1}-${i - emptyCalendarSpace}`;
+
+    let storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if ( !storedTasks ) {
+      storedTasks = [];
+    }
 
     if (i > emptyCalendarSpace) {
       if (holidays["dagar"][i - 1 - emptyCalendarSpace]["röd dag"] == "Ja") {
         calendarDay.style.color = "red";
       }
-
+      
       calendarDay.innerText = i - emptyCalendarSpace;
+
+      if (holidays["dagar"][i - 1 - emptyCalendarSpace]["helgdag"] != null) {
+        const holidayText = document.createElement("p");
+        calendarDay.appendChild(holidayText);
+        holidayText.textContent = holidays["dagar"][i - 1 - emptyCalendarSpace]["helgdag"];
+        calendarDay.style.color = "red";
+      }
+
+      const thisDay = (i - emptyCalendarSpace).toString().padStart(2, "0");
+      const sameDay = `${year}-${month + 1}-${thisDay}`;
       let eventCounter = 0;
 
       const eventDayDiv = document.createElement("div");
-
       eventDayDiv.classList.add("eventsInDay");
 
       storedTasks.forEach(task => {
@@ -76,22 +88,19 @@ async function displayCalendar() {
         }
       });
 
-      if (eventCounter <= 0) {
-        eventDayDiv.style.display = "none";
-      }
-
       eventDayDiv.textContent = eventCounter;
-
       calendarDay.append(eventDayDiv);
 
-      calendarDay.addEventListener("click", () => {});
-
-      if (holidays["dagar"][i - 1 - emptyCalendarSpace]["helgdag"] != null) {
-        t = document.createElement("p");
-        calendarDay.appendChild(t);
-        t.innerHTML = holidays["dagar"][i - 1 - emptyCalendarSpace]["helgdag"];
-        calendarDay.style.color = "red";
+      if (eventCounter <= 0) {
+        eventDayDiv.remove();
       }
+
+      calendarDay.addEventListener("click", () => {
+        const clickedDate = sameDay
+        filterTasks(clickedDate);
+      });
+
+ 
     } else {
       calendarDay.classList.add("emptyCalendarSpace");
     }
@@ -109,4 +118,20 @@ function changeMonthView() {
     currentMonth++;
     displayCalendar();
   });
+}
+
+function filterTasks(date) {
+  let storedTasks = JSON.parse(localStorage.getItem("tasks"));
+  const tasks = storedTasks.filter(task => task.date === date);
+
+  const taskContainer = document.querySelector(".taskList");
+  taskContainer.textContent = "";
+
+  tasks.forEach( task => {
+    const taskItem = document.createElement("div");
+    taskItem.classList.add("taskItem");
+    taskItem.innerText = task.text;
+
+    taskContainer.append(taskItem)
+  })
 }
