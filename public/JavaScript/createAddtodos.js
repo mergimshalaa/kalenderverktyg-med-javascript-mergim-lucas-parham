@@ -25,12 +25,14 @@ function addItemToDo() {
 
     const editTextInput = document.createElement("input");
     editTextInput.classList.add("editTextInput");
+    editTextInput.setAttribute("data-cy", "todo-task-input");
 
     const dateContainer = document.createElement("div");
     dateContainer.classList.add("dateContainer");
 
     const editDateInput = document.createElement("input");
     editDateInput.setAttribute("type", "date");
+    editDateInput.setAttribute("data-cy", "edit-todo-button");
     editDateInput.classList.add("editDateInput");
 
     const taskActions = document.createElement("div");
@@ -38,11 +40,11 @@ function addItemToDo() {
 
     const taskEdit = document.createElement("button");
     taskEdit.classList.add("edit");
-    taskEdit.setAttribute("data-cy", "edit-todo-button")
+    taskEdit.setAttribute("data-cy", "edit-todo-button");
 
     const deleteTask = document.createElement("i");
     deleteTask.classList.add("fa-solid", "fa-trash-can", "trash");
-    deleteTask.setAttribute("data-cy", "delete-todo-button")
+    deleteTask.setAttribute("data-cy", "delete-todo-button");
 
     taskActions.append(taskEdit, deleteTask);
     taskTextAndDateContainer.append(
