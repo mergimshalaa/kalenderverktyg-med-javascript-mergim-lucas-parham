@@ -14,6 +14,11 @@ function addItemToDo() {
   taskList.textContent = "";
 
   for (const task of storedTasks) {
+
+    const taskInput = document.querySelector("#taskInput");
+    const dateTodo = document.querySelector("#dateTodo");
+    const addBtn = document.querySelector("#addToDo");
+
     const taskItem = document.createElement("li");
     taskItem.classList.add("task");
 
@@ -23,17 +28,8 @@ function addItemToDo() {
     const taskText = document.createElement("div");
     taskText.classList.add("taskText");
 
-    const editTextInput = document.createElement("input");
-    editTextInput.classList.add("editTextInput");
-    editTextInput.setAttribute("data-cy", "todo-task-input");
-
     const dateContainer = document.createElement("div");
     dateContainer.classList.add("dateContainer");
-
-    const editDateInput = document.createElement("input");
-    editDateInput.setAttribute("type", "date");
-    editDateInput.setAttribute("data-cy", "edit-todo-button");
-    editDateInput.classList.add("editDateInput");
 
     const taskActions = document.createElement("div");
     taskActions.classList.add("taskActions");
@@ -49,9 +45,7 @@ function addItemToDo() {
     taskActions.append(taskEdit, deleteTask);
     taskTextAndDateContainer.append(
       taskText,
-      editTextInput,
       dateContainer,
-      editDateInput
     );
     taskItem.append(taskTextAndDateContainer, taskActions);
     taskList.append(taskItem);
@@ -59,30 +53,34 @@ function addItemToDo() {
     taskText.textContent = task.taskTitle;
     dateContainer.textContent = task.date;
     taskEdit.textContent = "Edit";
+
+    
     displayCalendar();
 
     taskEdit.addEventListener("click", () => {
       const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-      taskEdit.textContent = "Save";
+      addBtn.innerText = "Save";
       taskText.style.display = "none";
-      editTextInput.style.display = "flex";
       dateContainer.style.display = "none";
-      editDateInput.style.display = "flex";
 
-      taskEdit.addEventListener("click", () => {
+
+      addBtn.addEventListener("click", () => {
         const task = storedTasks.find((task) => task.id === task.id);
-        taskEdit.textContent = "Edit";
-        task.taskTitle = editTextInput.value;
-        task.date = editDateInput.value;
+        addBtn.textContent = "Add";
+        task.taskTitle = taskInput.value;
+        task.date = dateTodo.value;
 
         localStorage.setItem("tasks", JSON.stringify(storedTasks));
 
         taskText.style.display = "flex";
-        editTextInput.style.display = "none";
         dateContainer.style.display = "flex";
-        editDateInput.style.display = "none";
+
         addItemToDo();
         displayCalendar();
+
+        taskInput.value = "";
+        dateTodo.value = "";
+
       });
     });
 
