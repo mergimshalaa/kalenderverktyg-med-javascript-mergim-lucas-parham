@@ -78,9 +78,6 @@ function addItemToDo() {
         addItemToDo();
         displayCalendar();
 
-        taskInput.value = "";
-        dateTodo.value = "";
-
       });
     });
 
