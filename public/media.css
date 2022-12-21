@@ -32,7 +32,7 @@
 
 
 /* ======= MOBILE ======= */
-@media (min-width: 360px) and (max-width: 480px) {
+/* @media (min-width: 360px) and (max-width: 480px) {
   .weekdiv, main {
     display: none;
   }
@@ -58,7 +58,7 @@
   }
   .prevMonth, .nextMonth {
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 359px) {
