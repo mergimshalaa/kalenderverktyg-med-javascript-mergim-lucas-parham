@@ -1,5 +1,5 @@
 /* ======= TABLET ======= */
-/* @media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
   aside {
     position: absolute;
     top: 5rem;
@@ -28,12 +28,12 @@
   .editTextInput, .editDateInput {
     width: 28vw;
   }
-} */
+}
 
 
 /* ======= MOBILE ======= */
-/* @media (min-width: 360px) and (max-width: 480px) {
-  .weekdiv, main {
+@media (min-width: 360px) and (max-width: 480px) {
+  .weekdiv, .calendarDisplay {
     display: none;
   }
 
@@ -59,10 +59,10 @@
   .prevMonth, .nextMonth {
     display: none;
   } 
-}*/
+}
 
-/* @media (max-width: 359px) {
+@media (max-width: 359px) {
   body {
     display: none;
   }
-}  */
+} 
