@@ -151,7 +151,7 @@ header {
 }
 
 .newTask button {
-  width: 3rem;
+  padding: 0 .5rem;
   height: 1.9rem;
   border-radius: 4px;
   outline: none;
