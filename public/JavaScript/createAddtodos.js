@@ -5,7 +5,11 @@
  * and updates the todo count.
  */
 function addItemToDo() {
+  
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+  
+  //filterera ut taskList baserat på clicked date
+  //använd filterande listan igenom funktionen
 
   if (!storedTasks) {
     return;
@@ -77,18 +81,20 @@ function addItemToDo() {
 
         addItemToDo();
         displayCalendar();
-
+        
       });
     });
-
+    
     deleteTask.addEventListener("click", () => {
       const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-      const task = storedTasks.find((task) => task.id === task.id);
-      storedTasks.splice(task, 1);
-      localStorage.setItem("tasks", JSON.stringify(storedTasks));
-      taskItem.remove();
+      debugger;
+      const filterdTasks = storedTasks.filter((t) => t.id !== task.id);
+      
+      localStorage.setItem("tasks", JSON.stringify(filterdTasks));
+        
       updateTodoCount();
       displayCalendar();
+      addItemToDo();
     });
     updateTodoCount();
   }

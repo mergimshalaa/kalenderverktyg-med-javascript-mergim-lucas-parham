@@ -1,4 +1,5 @@
 let currentMonth = 0;
+let clickedDate = undefined;
 
 async function fetchholidays(date) {
   const year = date.getFullYear();
@@ -96,8 +97,8 @@ async function displayCalendar() {
       }
 
       calendarDay.addEventListener("click", () => {
-        const clickedDate = sameDay
-        filterTasks(clickedDate);
+        clickedDate = sameDay
+        addItemToDo();
       });
 
  
