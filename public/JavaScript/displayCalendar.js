@@ -60,6 +60,7 @@ async function displayCalendar() {
     const calendarDay = document.createElement("div");
     calendarDay.classList.add("calendarDay");
     calendarDay.setAttribute("data-cy", "filtered-todo-list");
+    
 
     let storedTasks = JSON.parse(localStorage.getItem("tasks"));
     if ( !storedTasks ) {
