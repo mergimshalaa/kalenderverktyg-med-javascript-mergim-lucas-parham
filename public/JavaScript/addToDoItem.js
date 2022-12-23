@@ -1,7 +1,7 @@
 /**
  * Function creating a todo item and displaying it in the DOM.
  * Also functions to edit and delete tasks.
- * @param {} task 
+ * @param {HTMLElement} task 
  */
 function addToDoItem (task) {
     const taskInput = document.querySelector("#taskInput");
