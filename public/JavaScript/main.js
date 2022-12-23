@@ -1,3 +1,6 @@
+/**
+ * Main function firing upon starting the page.
+ */
 function main() {
   startTimeAndDate();
   displayCalendar();
@@ -6,6 +9,9 @@ function main() {
   addAllToDos();
 }
 
+/**
+ * EventListeners thoughout the script.
+ */
 function addEventListeners() {
   document.querySelector("#addToDo").addEventListener("click", () => {
     addToDoToLS();

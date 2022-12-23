@@ -11,6 +11,9 @@ async function fetchholidays(date) {
   return result;
 }
 
+/**
+ * Rendering calendar, current month(changable) and tasks for each day.
+ */
 async function displayCalendar() {
   const calendarDisplay = document.querySelector(".calendarDisplay");
   const monthDisplay = document.querySelector(".monthDisplay");
@@ -107,17 +110,6 @@ async function displayCalendar() {
         filteredTasks.forEach(task => {
           addToDoItem(task);
         });
-        console.log(filteredTasks)
-        // const tasks = document.querySelectorAll(".task");
-
-
-        
-        // tasks.forEach((task) => {
-        //   if ( !filteredTasks.find( (tsk) => tsk.id === task.id ) ) {
-        //     task.style.display = "none"
-        //   }
-        // });
-
       });
  
     } else {
@@ -128,6 +120,9 @@ async function displayCalendar() {
   }
 }
 
+/**
+ * changing the month displayed when clicking arrow back and forth.
+ */
 function changeMonthView() {
   document.querySelector(".fa-angle-left").addEventListener("click", () => {
     currentMonth--;
@@ -137,20 +132,4 @@ function changeMonthView() {
     currentMonth++;
     displayCalendar();
   });
-}
-
-function filterTasks(date) {
-  let storedTasks = JSON.parse(localStorage.getItem("tasks"));
-  const tasks = storedTasks.filter(task => task.date === date);
-
-  const taskContainer = document.querySelector(".taskList");
-  taskContainer.textContent = "";
-
-  tasks.forEach( task => {
-    const taskItem = document.createElement("div");
-    taskItem.classList.add("taskItem");
-    taskItem.innerText = task.text;
-
-    taskContainer.append(taskItem)
-  })
 }

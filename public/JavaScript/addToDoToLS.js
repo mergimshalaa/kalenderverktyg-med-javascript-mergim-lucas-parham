@@ -1,3 +1,6 @@
+/**
+ * Adding task information to the local storage.
+ */
 function addToDoToLS() {
   const taskInput = document.querySelector("#taskInput");
   const dateInput = document.querySelector("#dateTodo");

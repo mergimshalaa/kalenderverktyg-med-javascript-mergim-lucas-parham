@@ -1,15 +1,9 @@
 /**
- * A function that retrieves the saved tasks from LS and
- * displays them in the task list in the DOM.
- * Eventlisteners for editing and deleting tasks
- * and updates the todo count.
+ * A function that renders the tasks from local storage.
  */
 function addAllToDos() {
   
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-  
-  //filterera ut taskList baserat på clicked date
-  //använd filterande listan igenom funktionen
 
   if (!storedTasks) {
     return;
