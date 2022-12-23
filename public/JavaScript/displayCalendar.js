@@ -11,6 +11,9 @@ async function fetchholidays(date) {
   return result;
 }
 
+/**
+ * Rendering calendar, current month(changable) and tasks for each day.
+ */
 async function displayCalendar() {
   const calendarDisplay = document.querySelector(".calendarDisplay");
   const monthDisplay = document.querySelector(".monthDisplay");
@@ -56,6 +59,8 @@ async function displayCalendar() {
   for (let i = 1; i <= emptyCalendarSpace + daysInMonth; i++) {
     const calendarDay = document.createElement("div");
     calendarDay.classList.add("calendarDay");
+    calendarDay.setAttribute("data-cy", "filtered-todo-list");
+    
 
     let storedTasks = JSON.parse(localStorage.getItem("tasks"));
     if ( !storedTasks ) {
@@ -97,10 +102,16 @@ async function displayCalendar() {
       }
 
       calendarDay.addEventListener("click", () => {
-        clickedDate = sameDay
-        addItemToDo();
-      });
+        clickedDate = sameDay;
+        const taskList = document.querySelector("#taskList");
+        const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+        const filteredTasks = storedTasks.filter((t) => t.date === clickedDate);
 
+        taskList.innerHTML = filteredTasks.length > 0 ? "" : "No tasks found this day.";
+        filteredTasks.forEach(task => {
+          addToDoItem(task);
+        });
+      });
  
     } else {
       calendarDay.classList.add("emptyCalendarSpace");
@@ -110,6 +121,9 @@ async function displayCalendar() {
   }
 }
 
+/**
+ * changing the month displayed when clicking arrow back and forth.
+ */
 function changeMonthView() {
   document.querySelector(".fa-angle-left").addEventListener("click", () => {
     currentMonth--;
@@ -119,20 +133,4 @@ function changeMonthView() {
     currentMonth++;
     displayCalendar();
   });
-}
-
-function filterTasks(date) {
-  let storedTasks = JSON.parse(localStorage.getItem("tasks"));
-  const tasks = storedTasks.filter(task => task.date === date);
-
-  const taskContainer = document.querySelector(".taskList");
-  taskContainer.textContent = "";
-
-  tasks.forEach( task => {
-    const taskItem = document.createElement("div");
-    taskItem.classList.add("taskItem");
-    taskItem.innerText = task.text;
-
-    taskContainer.append(taskItem)
-  })
 }

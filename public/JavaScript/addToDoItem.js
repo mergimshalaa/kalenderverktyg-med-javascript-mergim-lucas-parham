@@ -1,24 +1,9 @@
 /**
- * A function that retrieves the saved tasks from LS and
- * displays them in the task list in the DOM.
- * Eventlisteners for editing and deleting tasks
- * and updates the todo count.
+ * Function creating a todo item and displaying it in the DOM.
+ * Also functions to edit and delete tasks.
+ * @param {HTMLElement} task 
  */
-function addItemToDo() {
-  
-  const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-  
-  //filterera ut taskList baserat på clicked date
-  //använd filterande listan igenom funktionen
-
-  if (!storedTasks) {
-    return;
-  }
-  const taskList = document.getElementById("taskList");
-  taskList.textContent = "";
-
-  for (const task of storedTasks) {
-
+function addToDoItem (task) {
     const taskInput = document.querySelector("#taskInput");
     const dateTodo = document.querySelector("#dateTodo");
     const addBtn = document.querySelector("#addToDo");
@@ -57,7 +42,6 @@ function addItemToDo() {
     taskText.textContent = task.taskTitle;
     dateContainer.textContent = task.date;
     taskEdit.textContent = "Edit";
-
     
     displayCalendar();
 
@@ -79,7 +63,7 @@ function addItemToDo() {
         taskText.style.display = "flex";
         dateContainer.style.display = "flex";
 
-        addItemToDo();
+        addAllToDos();
         displayCalendar();
         
       });
@@ -87,24 +71,14 @@ function addItemToDo() {
     
     deleteTask.addEventListener("click", () => {
       const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-      debugger;
       const filterdTasks = storedTasks.filter((t) => t.id !== task.id);
       
       localStorage.setItem("tasks", JSON.stringify(filterdTasks));
         
       updateTodoCount();
       displayCalendar();
-      addItemToDo();
+      addAllToDos();
     });
-    updateTodoCount();
-  }
-}
 
-/**
- * Updates the todo count of task list items
- * and displays this count in a element in the DOM.
- */
-function updateTodoCount() {
-  const todoCount = document.querySelectorAll(".task").length;
-  document.querySelector("#todoCount").textContent = `${todoCount}`;
+    updateTodoCount();
 }
