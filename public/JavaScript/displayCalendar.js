@@ -56,6 +56,7 @@ async function displayCalendar() {
   for (let i = 1; i <= emptyCalendarSpace + daysInMonth; i++) {
     const calendarDay = document.createElement("div");
     calendarDay.classList.add("calendarDay");
+    calendarDay.setAttribute("data-cy", "filtered-todo-list");
 
     let storedTasks = JSON.parse(localStorage.getItem("tasks"));
     if ( !storedTasks ) {
@@ -97,10 +98,27 @@ async function displayCalendar() {
       }
 
       calendarDay.addEventListener("click", () => {
-        clickedDate = sameDay
-        addItemToDo();
-      });
+        clickedDate = sameDay;
+        const taskList = document.querySelector("#taskList");
+        const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+        const filteredTasks = storedTasks.filter((t) => t.date === clickedDate);
 
+        taskList.innerHTML = filteredTasks.length > 0 ? "" : "No tasks found this day.";
+        filteredTasks.forEach(task => {
+          addToDoItem(task);
+        });
+        console.log(filteredTasks)
+        // const tasks = document.querySelectorAll(".task");
+
+
+        
+        // tasks.forEach((task) => {
+        //   if ( !filteredTasks.find( (tsk) => tsk.id === task.id ) ) {
+        //     task.style.display = "none"
+        //   }
+        // });
+
+      });
  
     } else {
       calendarDay.classList.add("emptyCalendarSpace");
